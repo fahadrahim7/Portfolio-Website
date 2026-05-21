@@ -629,10 +629,9 @@ body {
 
 /* ── SKILLS ── */
 .skills-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 56px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
 }
 
 .skills-cat {
@@ -646,7 +645,7 @@ body {
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -654,12 +653,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
-  padding: 18px;
+  gap: 8px;
+  padding: 16px;
   background: var(--card-bg);
   border: 1px solid var(--card-bd);
   border-radius: var(--r);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text);
   transition: border-color 0.25s, transform 0.25s;
@@ -667,6 +666,13 @@ body {
 .tool-card:hover {
   border-color: rgba(0,229,160,0.3);
   transform: translateY(-2px);
+}
+.tc-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
 }
 .tc-icon { font-size: 24px; }
 .tc-cert {
@@ -682,9 +688,9 @@ body {
 }
 
 .exp-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 48px;
 }
 .exp-item {
   display: flex;
@@ -1051,6 +1057,8 @@ body {
 .proj-link:hover span { transform: translateX(3px); }
 .proj-no-link { color: var(--muted); pointer-events: none; }
 
+.proj-btn { padding: 11px 22px; font-size: 14px; margin-top: auto; align-self: flex-start; }
+
 /* ── CONTACT ── */
 .contact-hero {
   position: relative;
@@ -1098,6 +1106,21 @@ body {
   font-size: 17px;
   line-height: 1.75;
   margin-bottom: 40px;
+}
+
+.ch-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ch-note {
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.7;
+  letter-spacing: 0.3px;
 }
 
 .contact-cards {
@@ -1170,7 +1193,8 @@ body {
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-img-wrap { width: 260px; margin: 0 auto; }
-  .skills-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .tools-grid { grid-template-columns: repeat(3, 1fr); }
+  .exp-grid { grid-template-columns: 1fr; }
   .proj-featured { grid-template-columns: 1fr; }
   .pf-right { display: none; }
   .contact-cards { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
@@ -1201,4 +1225,5 @@ body {
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .pf-results { gap: 20px; }
   .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-grid { grid-template-columns: 1fr; }
 }
