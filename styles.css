@@ -697,6 +697,7 @@ body {
   align-items: flex-start;
   gap: 12px;
 }
+.exp-item > div { flex: 1; min-width: 0; }
 .exp-dot {
   width: 8px;
   height: 8px;
