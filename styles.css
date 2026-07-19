@@ -480,6 +480,179 @@ body {
   flex-shrink: 0;
 }
 
+/* ── INTRO VIDEO ── */
+.video-showcase {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(139,92,246,0.025), transparent 34%),
+    var(--bg);
+  border-bottom: 1px solid var(--card-bd);
+}
+
+.video-container {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+}
+
+.video-header {
+  max-width: 720px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.video-header .sec-desc { margin: 0 auto; }
+
+.video-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.video-orb-1 {
+  width: 420px;
+  height: 420px;
+  top: 10%;
+  left: -180px;
+  background: rgba(0,229,160,0.07);
+}
+
+.video-orb-2 {
+  width: 460px;
+  height: 460px;
+  right: -180px;
+  bottom: -10%;
+  background: rgba(139,92,246,0.08);
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  padding: 1px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(0,229,160,0.6), rgba(6,182,212,0.18) 45%, rgba(139,92,246,0.65));
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.45),
+    0 0 70px rgba(0,229,160,0.06),
+    0 0 90px rgba(139,92,246,0.07);
+}
+
+.video-frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--grad);
+  opacity: 0.22;
+  filter: blur(22px);
+}
+
+.video-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 21px;
+  background: var(--bg3);
+  color: var(--text);
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.video-facade img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(5,6,10,0.04) 40%, rgba(5,6,10,0.72) 100%),
+    rgba(5,6,10,0.08);
+  transition: background-color 0.3s ease;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  width: 88px;
+  height: 88px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(0,229,160,0.96), rgba(6,182,212,0.96));
+  box-shadow: 0 16px 44px rgba(0,229,160,0.28);
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-play span {
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 20px solid #020707;
+}
+
+.video-duration,
+.video-watch-label {
+  position: absolute;
+  bottom: 22px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.video-watch-label {
+  left: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.video-duration {
+  right: 24px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  background: rgba(5,6,10,0.78);
+  backdrop-filter: blur(8px);
+}
+
+.video-facade:hover img { transform: scale(1.025); filter: saturate(1.08); }
+.video-facade:hover .video-play {
+  transform: translate(-50%, -50%) scale(1.07);
+  box-shadow: 0 18px 54px rgba(0,229,160,0.4);
+}
+
+.video-facade:focus-visible {
+  outline: 3px solid var(--a1);
+  outline-offset: -5px;
+}
+
+.loom-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 21px;
+  background: #000;
+}
+
 /* ── ABOUT ── */
 .about-grid {
   display: grid;
@@ -1229,6 +1402,17 @@ body {
 
   .hero-title { letter-spacing: -0.5px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
+  .video-header { margin-bottom: 30px; }
+  .video-frame { border-radius: 14px; }
+  .video-facade, .loom-iframe { border-radius: 13px; }
+  .video-play { width: 62px; height: 62px; border-radius: 17px; }
+  .video-play span {
+    border-top-width: 9px;
+    border-bottom-width: 9px;
+    border-left-width: 14px;
+  }
+  .video-watch-label { left: 14px; bottom: 12px; font-size: 10px; }
+  .video-duration { right: 12px; bottom: 10px; }
 
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .pf-results { gap: 20px; }

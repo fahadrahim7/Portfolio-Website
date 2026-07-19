@@ -125,3 +125,22 @@ const statObs = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 if (statNums.length) statObs.observe(statNums[0].closest('.hero-stats') || document.body);
+
+// ── PERFORMANCE-FRIENDLY LOOM EMBED ──
+// Keep Loom's heavy player off the page until the visitor chooses to watch.
+const loomFrame = document.querySelector('[data-loom-video]');
+const loomFacade = loomFrame?.querySelector('.video-facade');
+
+loomFacade?.addEventListener('click', event => {
+  event.preventDefault();
+
+  const iframe = document.createElement('iframe');
+  iframe.className = 'loom-iframe';
+  iframe.src = 'https://www.loom.com/embed/f8500e441b354d179c9f869fb19ac7fa?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
+  iframe.title = "Fahad Rahim's GTM Engineer and CRM Specialist introduction video";
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.allowFullscreen = true;
+
+  loomFrame.replaceChildren(iframe);
+});
