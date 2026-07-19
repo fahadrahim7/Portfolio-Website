@@ -136,7 +136,7 @@ loomFacade?.addEventListener('click', event => {
 
   const iframe = document.createElement('iframe');
   iframe.className = 'loom-iframe';
-  iframe.src = 'https://www.loom.com/embed/f8500e441b354d179c9f869fb19ac7fa?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
+  iframe.src = 'https://www.loom.com/embed/e407c5ae3512499d89a68a31ce7dae77?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
   iframe.title = "Fahad Rahim's GTM Engineer and CRM Specialist introduction video";
   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   iframe.referrerPolicy = 'strict-origin-when-cross-origin';
