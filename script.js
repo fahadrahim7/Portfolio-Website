@@ -61,6 +61,24 @@ const fadeObs = new IntersectionObserver(entries => {
 
 fadeEls.forEach(el => fadeObs.observe(el));
 
+// ── SEAMLESS TECH STACK MARQUEE ──
+// Duplicate each row once so the CSS translation loops without a visible jump.
+document.querySelectorAll('.tool-marquee-track').forEach(track => {
+  const originalSet = track.querySelector('.tool-marquee-set');
+  if (!originalSet) return;
+
+  originalSet.querySelectorAll('.tool-card').forEach(card => {
+    card.setAttribute('role', 'listitem');
+  });
+
+  const duplicateSet = originalSet.cloneNode(true);
+  duplicateSet.setAttribute('aria-hidden', 'true');
+  duplicateSet.querySelectorAll('img').forEach(image => {
+    image.alt = '';
+  });
+  track.appendChild(duplicateSet);
+});
+
 // ── SKILL BAR ANIMATION ──
 const bars = document.querySelectorAll('.exp-fill');
 
