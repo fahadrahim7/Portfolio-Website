@@ -683,7 +683,8 @@ body {
   position: relative;
   z-index: 1;
   object-fit: cover;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
+  object-position: center top;
   border: 1px solid rgba(0,229,160,0.15);
 }
 
@@ -712,33 +713,6 @@ body {
   margin-bottom: 16px;
 }
 .about-text strong { color: var(--text); font-weight: 600; }
-
-.about-highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 28px 0;
-  padding: 24px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-bd);
-  border-radius: var(--r);
-}
-.ah-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--muted);
-}
-.ah-icon { font-size: 16px; flex-shrink: 0; }
-.ah-item a {
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.ah-item a:hover { color: var(--a1); }
-
-.about-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ── PROCESS ── */
 .process { background: var(--bg2); }
